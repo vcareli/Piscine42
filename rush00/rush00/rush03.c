@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinvieir <vinvieir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11          by vinvieir          #+#    #+#             */
 /*   Updated:                                         ###   ########.fr       */
