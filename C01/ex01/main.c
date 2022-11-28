@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 21/11/2022          by vinvieir          #+#    #+#             */
+/*   Created: 28/11/2022          by vinvieir          #+#    #+#             */
 /*   Updated:                                         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include <stdio.h>
 
-void    ft_is_negative(int n)
+void ft_ultimate_ft(int *********nbr);
+
+int main()
 {
-    char resp1 = 'P';
-    char resp2 = 'N';
+    int valeur;
+    int *a = &valeur;
+    int **b = &a;
+    int ***c = &b;
+    int ****q = &c;
+    int *****w = &q;
+    int ******z = &w;
+    int *******y = &z;
+    int ********x = &y;
 
-    n >= 0 ? write(1, &resp1, 1): write(1, &resp2, 1);
+    ft_ultimate_ft(&x);
+    printf("%d", valeur);
+    return (0);
 }

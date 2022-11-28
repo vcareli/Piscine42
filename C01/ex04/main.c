@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 21/11/2022          by vinvieir          #+#    #+#             */
+/*   Created: 28/11/2022          by vinvieir          #+#    #+#             */
 /*   Updated:                                         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include <stdio.h>
 
-void    ft_is_negative(int n)
+void    ft_ultimate_div_mod(int *a, int *b);
+
+int main()
 {
-    char resp1 = 'P';
-    char resp2 = 'N';
+    int a;
+    int b;
 
-    n >= 0 ? write(1, &resp1, 1): write(1, &resp2, 1);
+    a = 10;
+    b = 2;
+    printf("%d / %d = ", a, b);
+    ft_ultimate_div_mod(&a, &b);
+    printf("%d Mod %d", a, b);
+    return (0);
 }

@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 21/11/2022          by vinvieir          #+#    #+#             */
+/*   Created: 28/11/2022          by vinvieir          #+#    #+#             */
 /*   Updated:                                         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include <stdio.h>
 
-void    ft_is_negative(int n)
+void    ft_div_mod(int a, int b, int *div, int *mod);
+
+int main()
 {
-    char resp1 = 'P';
-    char resp2 = 'N';
+    int a;
+    int b;
+    int divisao;
+    int resto;
 
-    n >= 0 ? write(1, &resp1, 1): write(1, &resp2, 1);
+    a = 5;
+    b = 2;
+    ft_div_mod(a, b, &divisao, &resto);
+    printf("%d/%d = %d Mod %d", a, b, divisao, resto);
+    return (0);
 }

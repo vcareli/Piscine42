@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 21/11/2022          by vinvieir          #+#    #+#             */
+/*   Created: 28/11/2022          by vinvieir          #+#    #+#             */
 /*   Updated:                                         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void    ft_is_negative(int n)
+void    ft_ultimate_ft(int *********nbr)
 {
-    char resp1 = 'P';
-    char resp2 = 'N';
-
-    n >= 0 ? write(1, &resp1, 1): write(1, &resp2, 1);
+    *********nbr = 42;
 }
