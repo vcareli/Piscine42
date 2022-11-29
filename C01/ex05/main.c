@@ -13,9 +13,9 @@ void ft_putstr(char *str);
 
 int main()
 {
-    char    a;
+    char    *a;
     
-    a = 'q';
-    ft_putstr(&a);
+    a = "42 Quebec";
+    ft_putstr(a);
     return (0);
 }

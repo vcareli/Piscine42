@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,13 +9,17 @@
 /*   Updated:                                         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include <stdio.h>
 
-void    ft_putstr(char *str)
+int ft_strlen(char *str);
+
+int main()
 {
-    while (*str != '\0')
-    {
-        write(1, str, 1);
-        *str++;
-    }
+    char *chaine;
+    int q;
+
+    chaine = "42 Quebec";
+    q = ft_strlen(chaine);
+    printf("\n%d\n", q);
+    return (0);
 }

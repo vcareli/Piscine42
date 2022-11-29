@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 28/11/2022          by vinvieir          #+#    #+#             */
+/*   Created: 29/11/2022          by vinvieir          #+#    #+#             */
 /*   Updated:                                         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void    ft_putstr(char *str)
+void    ft_sort_int_tab(int *tab, int size)
 {
-    while (*str != '\0')
+    int i;
+    int tam;
+    int petit;
+
+    i = 0;
+    tam = size - 1;
+    while (i < tam)
     {
-        write(1, str, 1);
-        *str++;
+        petit = tab[i];
+        if (*(tab + tam) > petit)
+        {
+            *(tab + i) = *(tab + tam);
+            *(tab + tam) = petit;
+            i++;
+            tam--;
+        }
     }
 }

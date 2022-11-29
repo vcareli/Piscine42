@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,11 +11,20 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-void    ft_putstr(char *str)
+void    ft_rev_int_tab(int *tab, int size)
 {
-    while (*str != '\0')
+    int aux;
+    int i;
+    int tam;
+
+    i = 0;
+    tam = size - 1;
+    while (i < tam)
     {
-        write(1, str, 1);
-        *str++;
+        aux = tab[i];
+        *(tab + i) = *(tab + tam);
+        *(tab + tam) = aux;
+        i++;
+        tam--;
     }
 }
