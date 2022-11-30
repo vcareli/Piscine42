@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include <stddef.h>
+#include <unistd.h>
 
 char *ft_strcpy(char *dest, char *src)
 {
@@ -16,12 +17,24 @@ char *ft_strcpy(char *dest, char *src)
 
 int main()
 {
-    char name;
+    char *name;
     char *copy;
+    int i;
 
-
+    i = 0;
+    copy = NULL;
     name = "42 Quebec";
-    printf("\n%s\n", name);
-    copy = *ft_strcpy(copy, &name);
-    printf("\n%s\n", copy);
+    while (name[i] != '\0')
+    {
+        write(1, &name[i], 1);
+        i++;
+    }
+    write(1, "\n", 1);
+    copy = ft_strcpy(copy, name);
+    i = 0;
+    while (copy[i] != '\0')
+    {
+        write(1, &copy[i], 1);
+        i++;
+    }
 }
