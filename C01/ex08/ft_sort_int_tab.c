@@ -13,20 +13,19 @@
 void    ft_sort_int_tab(int *tab, int size)
 {
     int i;
-    int tam;
     int petit;
 
     i = 0;
-    tam = size - 1;
-    while (i < tam)
+    while (i < size)
     {
         petit = tab[i];
-        if (*(tab + tam) > petit)
+        if (*(tab + 1) < petit)
         {
-            *(tab + i) = *(tab + tam);
-            *(tab + tam) = petit;
+            *(tab) = *(tab + 1);
+            *(tab + 1) = petit;
+            *(tab++);
             i++;
-            tam--;
+            size--;
         }
     }
 }
