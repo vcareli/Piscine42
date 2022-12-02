@@ -1,30 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/30          by vinvieir          #+#    #+#             */
+/*   Updated: 2022/11/30          by vinvieir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int  ft_str_is_alpha(char *str)
+int	ft_str_is_alpha(char *str)
 {
-    int i;
+	int	i;
+	int	value;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-        if (str[i] >= 65 || str[i] < 91 || str[i] >= 97 || str[i] < 123)
-        {
-            return (1);
-        }
-        else
-        {
-            return(0);
-        }
-    }
+	value = 1;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] < 'A' || str[i] > 'Z') && (str[i] < 'a' || str[i] > 'z'))
+		{
+			value = 0;
+		}
+		i++;
+	}
+	return (value);
 }
 
+/*#include <unistd.h>
 int main()
 {
-    char str;
+	char str[] = "23453";
 
-    str = "23453";
-    if (&ft_str_is_alpha)
-        write(1, "L", 1);
-    else
-        write(1, "NL", 2);
-    return (0);
-}
+	if (ft_str_is_alpha(str))
+		write(1, "+", 1);
+	else
+		write(1, "-", 2);
+	return (0);
+}*/
