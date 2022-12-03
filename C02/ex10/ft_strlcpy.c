@@ -12,28 +12,26 @@
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int	a;
+	unsigned int	i;
+	int				tamanho;
 
-	a = 0;
-	while (src[a] != '\0')
+	if (!src || !dest)
 	{
-		if (size <= sizeof(dest))
-		{
-			dest[a] = src[a];
-		}
-		a++;
+		return (0);
 	}
-	return (*dest);
+	tamanho = 0;
+	while (src[tamanho])
+		tamanho++;
+	if (size == 0)
+	{
+		return (tamanho);
+	}
+	i = 0;
+	while (i < size - 1 && src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (tamanho);
 }
-
-/*#include <stdio.h>
-int main()
-{
-	char str[] = "42 Quebec";
-	char dest[] = {};
-
-	printf("Origin: %s\n", str);
-	ft_strlcpy(dest, str, sizeof(str));
-	printf("Copy: %s\n", dest);
-	return 0;
-}*/
