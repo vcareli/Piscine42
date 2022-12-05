@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_tab.c                                     :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 16:32:43 by vinvieir          #+#    #+#             */
-/*   Updated: 2022/12/02 14:13:35 by vinvieir         ###   ########.fr       */
+/*   Created: 2022/12/05 16:32:43 by vinvieir          #+#    #+#             */
+/*   Updated: 2022/12/05 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "rush.h"
 
-void	ft_print_tab(char **tab, int size)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int		x;
-	int		y;
-	char	c;
+	int i;
+	int j;
 
-	y = 0;
-	while (y < size)
+	i = -1;
+	if (to_find[0] == '\0')
+		return (str);
+	while (str[++i] != '\0')
 	{
-		x = 0;
-		while (x < size)
+		j = 0;
+		while (str[i + j] == to_find[j])
 		{
-			c = tab[y][x] + '0';
-			ft_putchar(c);
-			if (++x < size)
-				ft_putchar(' ');
+			if(to_find[j + 1] == '\0')
+				return (&str[i]);
+			j++;
 		}
-		ft_putchar('\n');
-		y++;
 	}
 }
+
+/*#include <stdio.h>
+int main()
+{
+	char a[] = "42 Quebec !";
+	char b[] = "u";
+
+	printf("String: %s\n", a);
+	printf("Cherche: %s\n", b);
+	printf(ft_strstr(a, b));
+	return 0;
+}*/
