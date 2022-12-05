@@ -43,7 +43,7 @@ int ft_len(char *str)
 	return (i);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
 	char a[10] = "42 Q";
@@ -53,4 +53,4 @@ int main()
 	printf("String 2: %s\n", b);
 	printf("String 1 Mod: %s\n", a);
 	return 0;
-}
+}*/
