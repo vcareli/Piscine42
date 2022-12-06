@@ -9,92 +9,35 @@
 /*   Updated: 2022/12/05 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int ft_strlen(char *str);
-int	ft_is_numeric(char *str);
-int ft_basedez(int n, int p);
-int ft_transf(int *m);
 
 int	ft_atoi(char *str)
 {
-	int	i;
-	int j;
-	int moins;
-	int reponse;
-	int input[];
-
-	i = -1;
-	j = -1;
-	moins = 0;
-	reponse = 1;
-	while (str[++i])
-	{
-		if (ft_is_numeric(&str[i]))
-		{
-			input[++j] = (str[i] - '0');
-		}
-		if (str[i] == '-')
-			moins++;
-	}
-	reponse = ft_transf(input);
-	if (moins % 2 != 0)
-		reponse *= -1;
-	return reponse;
-}
-
-int ft_strlen(char *str)
-{
+	int v;
 	int i;
+	int negativo;
 
 	i = 0;
-	while (str[i] != '\0')
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
-	return (i);
-}
-
-int	ft_is_numeric(char *str)
-{
-	if (*str < '0' || *str > '9')
-		return (0);
-	return (1);
-}
-
-int ft_basedez(int n, int p)
-{
-	if (p == 0)
-		n = 1;
-	else if ( p == 1)
-		return (n);
-	else
+	negativo = 0;
+	while(str[i] == '-' || str[i] == '+')
 	{
-		while (p > 1)
-		{
-			n *= 10;
-			p--;
-		}
+		if (str[i++] == '-')
+			negativo++;
 	}
-	return (n);
+	v = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+		v = v * 10 + str[i++] - '0';
+	if (negativo % 2 != 0)
+		v *= -1;
+	return (v);
 }
 
-int ft_transf(int *m)
-{
-	int i;
-	int r;
-
-	i = -1;
-	r = 0;
-	while (m[ft_strlen(m) - i])
-	{
-		r = r + ft_basedez(m[ft_strlen(m) - i], (-1 * i));
-		i--;
-	}
-	return (r);
-}
-
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
-	char a[] = "  ---+--+1234ab567";
+	char a[] = " ---+--+1234ab567";
 
 	printf("%d", ft_atoi(a));
 	return 0;
-}
+}*/
