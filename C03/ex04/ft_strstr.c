@@ -28,13 +28,14 @@ char	*ft_strstr(char *str, char *to_find)
 			j++;
 		}
 	}
+	return (&str[i]);
 }
 
 /*#include <stdio.h>
 int main()
 {
 	char a[] = "42 Quebec !";
-	char b[] = "u";
+	char b[] = "4";
 
 	printf("String: %s\n", a);
 	printf("Cherche: %s\n", b);

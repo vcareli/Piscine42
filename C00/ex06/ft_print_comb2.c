@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 16:32:43 by vinvieir          #+#    #+#             */
-/*   Updated: 2022/12/06 14:13:35 by vinvieir         ###   ########.fr       */
+/*   Created: 2022/12/07 16:32:43 by vinvieir          #+#    #+#             */
+/*   Updated: 2022/12/07 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_print_numbers(int num);
+void ft_print_numbers(int num);
 
 void	ft_print_comb2(void)
 {
@@ -37,8 +37,8 @@ void	ft_print_comb2(void)
 
 void	ft_print_numbers(int num)
 {
-	int d;
-	int u;
+	int	d;
+	int	u;
 
 	d = (num / 10) + 48;
 	u = (num % 10) + 48;

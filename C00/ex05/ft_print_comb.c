@@ -5,25 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 21/11/2022          by vinvieir          #+#    #+#             */
-/*   Updated:                                         ###   ########.fr       */
+/*   Created: 2022/12/07 16:32:43 by vinvieir          #+#    #+#             */
+/*   Updated: 2022/12/07 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void    ft_print_comb(void)
+void	ft_print_comb(void)
 {
- 	char    c;
-    char    d;
-    char    u;
+	char	c;
+	char	d;
+	char	u;
 
 	c = '0';
 	while (c <= '9')
-    {
-	    d = c + 1;
-		while (d <= '9'){
+	{
+		d = c + 1;
+		while (d <= '9')
+		{
 			u = d + 1;
-			while (u <= '9'){
+			while (u <= '9')
+			{
 				write(1, &c, 1);
 				write(1, &d, 1);
 				write(1, &u, 1);
@@ -36,3 +38,9 @@ void    ft_print_comb(void)
 		c++;
 	}
 }
+
+/*int main()
+{
+	ft_print_comb();
+	return 0;
+}*/

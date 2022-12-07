@@ -5,13 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 21/11/2022          by vinvieir          #+#    #+#             */
-/*   Updated:                                         ###   ########.fr       */
+/*   Created: 2022/12/07 16:32:43 by vinvieir          #+#    #+#             */
+/*   Updated: 2022/12/07 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
+
+/*int main(){
+	ft_putchar('4');
+	return 0;
+}*/

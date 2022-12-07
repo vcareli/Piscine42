@@ -13,11 +13,11 @@ int	ft_len(char *str);
 
 char	ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
-	int	tam;
+	unsigned int	i;
+	int				tam;
 
 	i = 0;
-	tam = ft_len(dest) - 1;
+	tam = ft_len(dest);
 	while (i <= nb - 1)
 	{
 		dest[tam] = src[i];
@@ -34,7 +34,7 @@ int	ft_len(char *str)
 	i = 0;
 	while (str[i] != '\0')
 		i++;
-	return (i + 1);
+	return (i);
 }
 
 /*#include <stdio.h>

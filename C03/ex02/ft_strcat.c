@@ -17,7 +17,7 @@ char	ft_strcat(char *dest, char *src)
 	int	tam;
 
 	i = 0;
-	tam = ft_len(dest) - 1;
+	tam = ft_len(dest);
 	while (src[i] != '\0')
 	{
 		dest[tam] = src[i];
@@ -34,14 +34,14 @@ int	ft_len(char *str)
 	i = 0;
 	while (str[i] != '\0')
 		i++;
-	return (i + 1);
+	return (i);
 }
 
 /*#include <stdio.h>
 int main()
 {
-	char a[100] = "42 Q";
-	char b[] = "uebec !";
+	char a[50] = "42";
+	char b[] = " Quebec !";
 
 	printf("String 1: %s\n", a);
 	printf("String 2: %s\n", b);
