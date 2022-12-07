@@ -1,54 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 16:32:43 by vinvieir          #+#    #+#             */
-/*   Updated: 2022/12/06 14:13:35 by vinvieir         ###   ########.fr       */
+/*   Created: 2022/12/07 16:32:43 by vinvieir          #+#    #+#             */
+/*   Updated: 2022/12/07 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void ft_putchar(char c);
-
-void	ft_putnbr(int nb)
+int	ft_iterative_factorial(int nb)
 {
-	int i;
-	int v;
-	int n;
+	int	i;
+	unsigned int f;
 
+	i = -1;
+	f = 1;
 	if (nb < 0)
+		f = 0;
+	else if (nb == 0)
+		f = 1;
+	else
 	{
-		ft_putchar('-');
-		nb = (-1) * nb;
+		while (++i < nb)
+			f *= (nb - i);
 	}
-	v = nb;
-	i = 1;
-	while (v > 9)
-	{
-		v /= 10;
-		i *= 10;
-	}
-	while (i >= 1)
-	{
-		n = (nb / i);
-		nb = nb % i;
-		n = n + 48;
-		ft_putchar(n);
-		i /= 10;
-	}
+	return (f);
 }
 
-void ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include <stdio.h>
+int main(){
+	int n = 31;
 
-int	main()
-{
-	ft_putnbr(-32768);
-	ft_putchar('\n');
-	ft_putnbr(32767);
+	printf("%d", ft_iterative_factorial(n));
 }

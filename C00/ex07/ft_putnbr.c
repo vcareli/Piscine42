@@ -5,37 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 21/11/2022          by vinvieir          #+#    #+#             */
-/*   Updated:                                         ###   ########.fr       */
+/*   Created: 2022/11/21 16:32:43 by vinvieir          #+#    #+#             */
+/*   Updated: 2022/12/06 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void    ft_putnbr(int nb)
+void ft_putchar(char c);
+
+void	ft_putnbr(int nb)
 {
-    int index;
-    int value;
-    int n;
+	int i;
+	int v;
+	int n;
 
-    if (nb < 0)
-    {
-        write(1, "-", 1);
-        nb = (-1) * nb;
-    }
-    value = nb;
-    index = 1;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = (-1) * nb;
+	}
+	v = nb;
+	i = 1;
+	while (v > 9)
+	{
+		v /= 10;
+		i *= 10;
+	}
+	while (i >= 1)
+	{
+		n = (nb / i);
+		nb = nb % i;
+		n = n + 48;
+		ft_putchar(n);
+		i /= 10;
+	}
+}
 
-    while (value >= 10)
-    {
-        value /= 10;
-        index *= 10;
-    }
-    while (index >=1)
-    {
-        n = nb / index;
-        nb %= index;
-        n = n + 48;
-        write(1, &n, 1);
-        index /= 10;
-    }
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int	main()
+{
+	ft_putnbr(-32768);
+	ft_putchar('\n');
+	ft_putnbr(32767);
 }
