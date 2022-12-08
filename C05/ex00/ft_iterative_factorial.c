@@ -12,8 +12,8 @@
 
 int	ft_iterative_factorial(int nb)
 {
-	int				i;
-	unsigned int	f;
+	int	i;
+	int	f;
 
 	i = -1;
 	f = 1;
@@ -31,7 +31,7 @@ int	ft_iterative_factorial(int nb)
 
 /*#include <stdio.h>
 int main(){
-	int n = 31;
+	int n = 5;
 
 	printf("%d", ft_iterative_factorial(n));
 }*/

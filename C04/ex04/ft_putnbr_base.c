@@ -11,26 +11,59 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
+int	ft_erro(char *str);
 void	ft_putchar(char c);
-void	ft_print(unsigned int n, char *base, unsigned int size);
-int		ft_inbase(char c, char *base);
+int ft_strlen(char *str);
+
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	i;
+	int tam;
+	int erro;
+	long n;
 
-	i = -1;
-	while (base[++i])
+	erro = ft_erro(base);
+	tam = ft_strlen(base);
+	n = nbr;
+	if (erro)
 	{
-		if (base[i] == '+' || base[i] == '-' || base[i] == ' ' || ft_inbase(base[i], base + i + 1) || (base[i] >= 9	&& base[i] <= 13))
-			return;
+		if (n < 0)
+		{
+			ft_putchar('-');
+			n *= -1;
+		}
+		if (n < tam)
+			ft_putchar(base[n]);
+		if ( n >= tam)
+		{
+			ft_putnbr_base(n / tam, base);
+			ft_putnbr_base(n % tam, base);
+		}
 	}
-	if (i < 2)
-		return;
-	if (nbr < 0)
-		return;
-	else
-		ft_print(nbr, base, i);
+}
+
+int	ft_erro(char *str)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	if (str[0] == '\0' || ft_strlen(str) == 1)
+		return (0);
+	while (str[i])
+	{
+		if (str[i] <= 32 || str[i] == 127 || str[i] == 43 || str[i] == 45)
+			return (0);
+		j = i + 1;
+		while (j < ft_strlen(str))
+		{
+			if (str[i] == str[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
 void	ft_putchar(char c)
@@ -38,26 +71,23 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print(unsigned int n, char *base, unsigned int size)
- {
-	if (n > size - 1)
-	{
-		ft_print(n / size, base, size);
-		n %= size;
-	}
-	ft_putchar(base[n]);
-}
-
-int	ft_inbase(char c, char *base)
+int ft_strlen(char *str)
 {
-	while (*base)
-	{
-		if (c == *base++)
-			return (1);
-	}
-	return (0);
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
+/*#include <stdio.h>
 int	main(){
-	ft_putnbr_base(20, "01234567");
-}
+	ft_putnbr_base(-12, "01");
+	printf("\n");
+	ft_putnbr_base(40, "poneyvif");
+	printf("\n");
+	ft_putnbr_base(894867, "0123456789");
+	printf("\n");
+	ft_putnbr_base(53, "0123456789abcdef");
+}*/

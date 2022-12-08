@@ -13,8 +13,6 @@
 
 void ft_putstr(char *str)
 {
-	int i;
-
 	while (*str)
 	{
 		write(1, str, 1);

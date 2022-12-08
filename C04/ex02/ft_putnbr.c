@@ -15,30 +15,25 @@ void ft_putchar(char c);
 
 void	ft_putnbr(int nb)
 {
-	int i;
-	int v;
-	int n;
-
-	if (nb < 0)
+	if (nb == -2147483648)
 	{
 		ft_putchar('-');
-		nb = (-1) * nb;
+		ft_putchar('2');
+		ft_putnbr(147483648);
 	}
-	v = nb;
-	i = 1;
-	while (v > 9)
+	else if (nb < 0)
 	{
-		v /= 10;
-		i *= 10;
+		ft_putchar('-');
+		nb *= -1;
+		ft_putnbr(nb);
 	}
-	while (i >= 1)
+	else if (nb > 9)
 	{
-		n = (nb / i);
-		nb = nb % i;
-		n = n + 48;
-		ft_putchar(n);
-		i /= 10;
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
+	else
+		ft_putchar(nb + '0');
 }
 
 void ft_putchar(char c)
@@ -46,9 +41,9 @@ void ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	main()
+/*int	main()
 {
 	ft_putnbr(-32768);
 	ft_putchar('\n');
 	ft_putnbr(32767);
-}
+}*/

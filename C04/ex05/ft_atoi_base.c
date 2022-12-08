@@ -12,33 +12,5 @@
 
 int ft_atoi_base(char *str, char *base)
 {
-	int v;
-	int i;
-	int negativo;
-
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	negativo = 0;
-	while(str[i] == '-' || str[i] == '+')
-	{
-		if (str[i++] == '-')
-			negativo++;
-	}
-	v = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-		v = v * 10 + str[i++] - '0';
-	if (negativo % 2 != 0)
-		v *= -1;
-	return (v);
-}
-
-#include <stdio.h>
-int main()
-{
-	char a[] = " ---+--+1234ab567";
-    char b[20];
-
-    ft_atoi_base(b, a);
-	return 0;
+	return (0);
 }
