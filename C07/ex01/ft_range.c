@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,37 +9,33 @@
 /*   Updated: 2022/12/02 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-char	*ft_strcat(char *dest, char *src)
+int	*ft_range(int min, int max)
 {
-	int	i;
-	int	j;
+	int *matrix;
+	int i;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	i = -1;
+	if ( min >= max)
+		return (NULL);
+	matrix = malloc((max - min)*sizeof(int));
+	if (!matrix)
+		return (NULL);
+	while (++i < (max - min))
+		matrix[i] = (min + i);
+	return (matrix);
 }
 
 /*#include <stdio.h>
-int main()
-{
-	char a[50] = "42";
-	char b[] = " Quebec !";
+int main(){
+	int i = -1;
+	int n1 = 5;
+	int n2 = 15;
+	int *tab;
 
-	printf("String 1: %s\n", a);
-	printf("String 2: %s\n", b);
-	//ft_strcat(a, b);
-	printf("String 1 Mod: %s\n", ft_strcat(a, b));
+	tab = ft_range(n1, n2);
+	while (++i < (n2 - n1))
+		printf("%d - ", tab[i]);
 	return 0;
 }*/

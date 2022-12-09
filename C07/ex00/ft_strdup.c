@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,37 +9,46 @@
 /*   Updated: 2022/12/02 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
+#include <string.h>
 
-char	*ft_strcat(char *dest, char *src)
+int	ft_strlen(char *str);
+
+char	*ft_strdup(char *src)
 {
-	int	i;
-	int	j;
+	char	*copia;
+	int		i;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	i = -1;
+	copia = ((char *)malloc(ft_strlen(src)*sizeof(char) + 1));
+	if (!copia)
+		return (0);
+	while (src[++i])
+		copia[i] = src[i];
+	copia[i] = '\0';
+	return (copia);
+}
+
+int	ft_strlen(char *str)
+{
+	int	total;
+
+	total = 0;
+	while (str[total])
+		total++;
+	return (total);
 }
 
 /*#include <stdio.h>
-int main()
+int	main()
 {
-	char a[50] = "42";
-	char b[] = " Quebec !";
+	char	*str;
+	char	*allocated;
 
-	printf("String 1: %s\n", a);
-	printf("String 2: %s\n", b);
-	//ft_strcat(a, b);
-	printf("String 1 Mod: %s\n", ft_strcat(a, b));
-	return 0;
+	str = "Hello World com malloc()";
+	printf("original  : base  : $%s$ @ %p\n", str, str);
+	allocated = strdup(str);
+	printf("copied    : alloc : $%s$ @ %p\n", allocated, allocated);
+	allocated = ft_strdup(str);
+	printf("ft_copied : alloc : $%s$ @ %p\n", allocated, allocated);
 }*/

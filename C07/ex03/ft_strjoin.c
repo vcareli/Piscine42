@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,37 +9,8 @@
 /*   Updated: 2022/12/02 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
 }
-
-/*#include <stdio.h>
-int main()
-{
-	char a[50] = "42";
-	char b[] = " Quebec !";
-
-	printf("String 1: %s\n", a);
-	printf("String 2: %s\n", b);
-	//ft_strcat(a, b);
-	printf("String 1 Mod: %s\n", ft_strcat(a, b));
-	return 0;
-}*/

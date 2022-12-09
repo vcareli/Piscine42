@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,37 +9,42 @@
 /*   Updated: 2022/12/02 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-char	*ft_strcat(char *dest, char *src)
+int ft_ultimate_range(int **range, int min, int max)
 {
-	int	i;
-	int	j;
+	int i;
+	int var;
+	int *buffer;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
+	i = -1;
+	var = max - min;
+	if ( min >= max)
 	{
-		i++;
+		*range = 0;
+		return (0);
 	}
-	while (src[j] != '\0')
+	buffer = malloc((var)*sizeof(int));
+	if (!range)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		*range = 0;
+		return (0);
 	}
-	dest[i] = '\0';
-	return (dest);
+	*range = buffer;
+	while (++i < var)
+		buffer[i] = (min + i);
+	return (var);
 }
 
-/*#include <stdio.h>
-int main()
-{
-	char a[50] = "42";
-	char b[] = " Quebec !";
+#include <stdio.h>
+int main(){
+	int i = -1;
+	int n1 = 5;
+	int n2 = 15;
+	int *tab;
 
-	printf("String 1: %s\n", a);
-	printf("String 2: %s\n", b);
-	//ft_strcat(a, b);
-	printf("String 1 Mod: %s\n", ft_strcat(a, b));
+	ft_ultimate_range(&tab, n1, n2);
+	while (++i < (n2 - n1))
+		printf("%d - ", tab[i]);
 	return 0;
-}*/
+}
