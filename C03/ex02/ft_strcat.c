@@ -16,14 +16,14 @@ char	*ft_strcat(char *dest, char *src)
 	int	j;
 
 	i = 0;
-	j = 0;
 	while (dest[i] != '\0')
 	{
 		i++;
 	}
+	j = 0;
 	while (src[j] != '\0')
 	{
-		dest[i] = src[j];
+		dest[i] = src [j];
 		i++;
 		j++;
 	}
@@ -32,14 +32,9 @@ char	*ft_strcat(char *dest, char *src)
 }
 
 /*#include <stdio.h>
-int main()
+int	main()
 {
-	char a[50] = "42";
-	char b[] = " Quebec !";
-
-	printf("String 1: %s\n", a);
-	printf("String 2: %s\n", b);
-	//ft_strcat(a, b);
-	printf("String 1 Mod: %s\n", ft_strcat(a, b));
-	return 0;
+	char src[] = "42 ";
+	char dest[] = "Quebec ";
+	printf("%s", ft_strcat(dest, src));
 }*/

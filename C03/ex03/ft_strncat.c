@@ -9,43 +9,31 @@
 /*   Updated: 2022/12/02 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_len(char *str);
 
-char	ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
-	int				tam;
+	unsigned int	j;
 
 	i = 0;
-	tam = ft_len(dest);
-	while (i <= nb - 1)
+	j = 0;
+	while (dest[i] != '\0')
 	{
-		dest[tam] = src[i];
-		tam++;
 		i++;
 	}
-	return (*dest);
-}
-
-int	ft_len(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	while (j < nb && src[j] != '\0')
+	{
+		dest[i + j] = src [j];
+		j++;
+	}
+	dest[i + j] = '\0';
+	return (dest);
 }
 
 /*#include <stdio.h>
-int main()
+int	main()
 {
-	char a[100] = "42 Q";
-	char b[] = "uebec !";
-
-	printf("String 1: %s\n", a);
-	printf("String 2: %s\n", b);
-	ft_strncat(a, b, 2);
-	printf("String 1 Mod: %s\n", a);
-	return 0;
+	char src[] = "Quebec";
+	char dest[] = "42 ";
+	printf("%s", ft_strncat(dest, src, 5));
 }*/

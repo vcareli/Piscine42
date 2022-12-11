@@ -12,31 +12,21 @@
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (s1[i] != s2[i] && s1[i] != '\0' && s2[i] != '\0')
+	while (s1[i] == s2[i] && (s1[i] != '\0' || s2[i] != '\0'))
+	{
 		i++;
+	}
 	return (s1[i] - s2[i]);
 }
 
 /*#include <stdio.h>
-int main()
+int	main()
 {
-	char org[] = "42 Quebecdfdfg dfgdfg";
-	char des[] = "42 Quebece!fefef efefef dgeryuyk fgndfg";
-	int t;
-
-	t = ft_strcmp(org, des);
-	if (t == 0)
-	{
-		printf("==");
-		printf("%d", t);
-	}
-	else
-	{
-		printf("<>");
-		printf("%d", t);
-	}
-	return 0;
+	printf("%d", ft_strcmp("42", "42"));
+	printf("\n%d", ft_strcmp("Hello", "He"));
+	printf("\n%d", ft_strcmp("He", "Hello"));
+	printf("\n%d", ft_strcmp("Hello", "Hello"));
 }*/

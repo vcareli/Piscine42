@@ -13,41 +13,25 @@
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
-	int				value;
 
 	i = 0;
-	value = 0;
-	while (i <= n)
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		if (s1[i] != s2[i])
+		if (s1[i] > s2[i])
 		{
-			if (s1[i] > s2[i])
-				value = s1[i];
-			else
-				value = -(s2[i]);
+			return (1);
+		}
+		else if (s1[i] < s2[i])
+		{
+			return (-1);
 		}
 		i++;
 	}
-	return (value);
+	return (0);
 }
 
 /*#include <stdio.h>
-int main()
+int	main()
 {
-	char org[] = "42 Quebecdfdfg dfgdfg";
-	char des[] = "42 Quebece!fefef efefef dgeryuyk fgndfg";
-	int t;
-
-	t = ft_strncmp(org, des, 10);
-	if (t == 0)
-	{
-		printf("==");
-		printf("%d", t);
-	}
-	else
-	{
-		printf("<>");
-		printf("%d", t);
-	}
-	return 0;
+	printf("%d", ft_strncmp("Hello", "HelloWorld", 8));
 }*/
