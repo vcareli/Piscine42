@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,29 +12,30 @@
 
 int	ft_sqrt(int nb)
 {
-	int	s;
-	int	n;
-	int	demi;
+	int i;
+	long r;
 	int	racine;
 
-	s = 0;
-	n = nb;
-	demi = (s + n) / 2;
-	if ((demi * demi <= n) && ((demi + 1) * (demi + 1) > n))
-		racine = demi;
-	if (demi * demi < n)
-		racine = ft_sqrt(demi + 1);
-	else
-		racine = 0;
-	return (racine);
+	i = 2;
+	r = nb;
+	if (r == 1 || r == 2)
+		return (1);
+	else if (r > 2)
+		while (i * i <= r)
+		{
+			if (i * i == r)
+				return (i);
+			i++;
+		}
+	return (0);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
 	int n;
-	printf("\nDigite um numero: ", ft_sqrt(9));
+	printf("\nNumero: ");
 	scanf("%d", &n);
-	printf("\nRaiz: %d\n", ft_sqrt(n));
+	printf("Racine: %d\n\n", ft_sqrt(n));
 
-}
+}*/
