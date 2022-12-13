@@ -36,7 +36,7 @@ int ft_ultimate_range(int **range, int min, int max)
 	return (var);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main(){
 	int i = -1;
 	int n1 = 5;
@@ -47,4 +47,4 @@ int main(){
 	while (++i < (n2 - n1))
 		printf("%d - ", tab[i]);
 	return 0;
-}
+}*/
