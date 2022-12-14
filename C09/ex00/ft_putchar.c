@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 16:32:43 by vinvieir          #+#    #+#             */
-/*   Updated: 2022/12/12 14:13:35 by vinvieir         ###   ########.fr       */
+/*   Created: 2022/12/07 16:32:43 by vinvieir          #+#    #+#             */
+/*   Updated: 2022/12/07 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#include <unistd.h>
 
-# include <unistd.h>
-
-# define TRUE		true
-# define FALSE		false
-# define EVEN(nbr)	((nbr % 2 == 0) ? 1 : 0)
-# define EVEN_MSG 	"EVEN"
-# define ODD_MSG 	"ODD"
-# define SUCCESS	0
-
-typedef enum t_bool
+void	ft_putchar(char c)
 {
-	false = 0,
-	true = 1,
-}	t_bool;
-
-#endif
+	write(1, &c, 1);
+}

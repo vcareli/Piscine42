@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinvieir <vinvieir@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,22 +9,13 @@
 /*   Updated: 2022/12/12 14:13:35 by vinvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-# include <unistd.h>
-
-# define TRUE		true
-# define FALSE		false
-# define EVEN(nbr)	((nbr % 2 == 0) ? 1 : 0)
-# define EVEN_MSG 	"EVEN"
-# define ODD_MSG 	"ODD"
-# define SUCCESS	0
-
-typedef enum t_bool
+typedef struct t_point
 {
-	false = 0,
-	true = 1,
-}	t_bool;
+	int	x;
+	int	y;
+}	t_point;
 
 #endif
