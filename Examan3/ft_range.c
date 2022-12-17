@@ -20,50 +20,60 @@
  * */
 #include <stdlib.h>
 
+int        ft_abs(int x)
+{
+    if (x < 0)
+        return (-x);
+    return (x);
+}
+
 int	*ft_range(int start, int end)
 {
-	int	*matrix;
-	int i;
-	int size;
+	int	size;
+	int	i;
+	int	*tab;
+	int*d;
 
-	i = 0;
-	size = (end - start);
-	if (size < 0)
-		size *= -1;
-	size++;
-	matrix = malloc(size * sizeof(int));
-	if (!matrix)
+	size = ft_abs(end - start) + 1;
+	d = (tab = malloc(size * sizeof(int)));
+	if (!d)
 		return (0);
+	i = 0;
 	if (size == 1)
-		matrix[0] = start;
+		tab[0] = start;
 	if (start < end)
 	{
-		while (i <= size)
+		while (i < size)
 		{
-			matrix[i] = start + i;
+			tab[i] = start + i;
 			i++;
 		}
 	}
-	else
+	else if (start > end)
 	{
-		while (i <= size)
+		while (i < size)
 		{
-			matrix[i] = start + i;
-			i--;
+			tab[i] = start - i;
+			i++;
 		}
 	}
-	return (matrix);
+	//free(tab);
+	return (tab);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main(){
 	int i = 0;
 	int s = 0;
-	int e = -2;
+	int e = 5;
+	int *tab;
+	int size = ft_abs(e - s) + 1;
 
-	while(i <= (e - s))
+	tab = ft_range(s, e);
+	while(i < size)
 	{
-		printf("%d ", *ft_range(s, e));
+		printf("%i \n", tab[i]);
 		i++;
 	}
-}
+	free(tab);
+}*/
